@@ -1,18 +1,31 @@
+#lista geral de todos os numeros
 lista = []
+
+#lista de numeros pares, numeros entram com uma condicional
 lista_par = []
+
+#lista de numeros impares, numeros entram com uma condicional
 lista_impar = []
+
+#entrada dos valores, para quando o usuario digita algo como N ou n
 while True:
+
     n = int(input("Digite um valor: "))
     lista.append(n)
-    sn = str(input("Quer continuar [S/N] "))
-    if sn in "Nn":
+    condicao = str(input("Quer continuar? [S/N]"))
+    
+    #condição de parada
+    if condicao in 'Nn':
         break
-for i in range(len(lista)):
-    if lista[i] % 2 == 0:
-        lista_par.append(lista[i])
-    else:
-        lista_impar.append(lista[i])
 
-print(f"Valores digitados {lista}")
-print(f"Lista de pares {lista_par.sort()}")
-print(f"Lista de impares {lista_impar.sort()}")
+#condicional para definir par e impares
+for num in lista:
+    if num % 2 == 1:
+        lista_impar.append(num)
+    else:
+        lista_par.append(num)
+
+#saida das listas
+print(f'Números digitados: {lista}')
+print(f'Lista de pares: {lista_par}')
+print(f'Lista de ímpares: {lista_impar}')
